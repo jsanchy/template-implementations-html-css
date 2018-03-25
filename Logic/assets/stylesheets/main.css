@@ -63,11 +63,24 @@ table {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
 }
 
+
+.container {
+    width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/*
+
+  Header
+
+*/
+
 .primary-header {
-    position: absolute;
+    position: fixed;
     padding-top: 15px;
     background-color: rgba(34, 61, 97, 0.64);
     width: 100%;
@@ -75,13 +88,9 @@ body {
     overflow: hidden;
 }
 
-.container {
+.primary-header .container {
     display: flex;
     justify-content: space-between;
-    width: 1170px;
-    margin: 0 auto;
-    padding: 0 15px;
-    overflow: hidden;
     height: 100%;
 }
 
@@ -153,4 +162,62 @@ body {
 
 .placeholder {
     height: 1000px;
+}
+
+/*
+
+  Home
+
+*/
+
+.hero {
+    position: relative;
+    z-index: -1;
+}
+
+.hero .container {
+    position: absolute;
+    /* BEGIN: make auto margin work with absolute positioning */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 1170px;
+    /* END */
+    padding-top: 250px;
+}
+
+.hero h1,
+.hero p {
+    text-align: center;
+    color: #fff;
+}
+
+.hero h1 {
+    line-height: 75px;
+    font-size: 52px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    line-height: 28px;
+    margin-bottom: 50px;
+}
+
+.hero .btn {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    line-height: 50px;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background-color: #ff7200;
+    width: 150px;
+    margin: auto;
 }
