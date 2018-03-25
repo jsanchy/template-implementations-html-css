@@ -67,24 +67,27 @@ body {
 }
 
 .primary-header {
+    position: absolute;
     padding-top: 15px;
     background-color: rgba(34, 61, 97, 0.64);
+    width: 100%;
     height: 75px;
     overflow: hidden;
 }
 
 .container {
+    display: flex;
+    justify-content: space-between;
     width: 1170px;
     margin: 0 auto;
+    padding: 0 15px;
     overflow: hidden;
     height: 100%;
 }
 
 .logo {
-    display: inline-block;
     width: 100px;
     height: 36px;
-    margin-left: 15px;
     border: 1px solid #fff;
     padding-top: 7px;
     text-align: center;
@@ -98,31 +101,56 @@ body {
     font-weight: bold;
 }
 
-.nav li {
-    display: inline-block;
-    height: 55px;
-    vertical-align: top;
-}
-
 .primary-nav {
-    display: inline-block;
+    align-self: flex-end;
     margin-top: 15px;
     height: 100%;
-    float: right;
     text-transform: uppercase;
     font-size: 12px;
     font-weight: bold;
     letter-spacing: .5px;
-    
+}
+
+.primary-nav ul {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+}
+
+.primary-nav li {
+    height: 55px;
+}
+
+.primary-nav a,
+.primary-nav span {
+    display: inline-block;
+    height: 100%;
 }
 
 .nav li a,
 .search {
-    padding: 0 15px 0 15px;
+    padding: 15px 15px 20px 15px;
     text-decoration: none;
     color: #fff;
 }
 
 .search {
-    font-size: 14px;
+    padding-right: 0;
+}
+
+.primary-nav a:hover,
+.primary-nav span:hover {
+    color: #ff7200;
+}
+
+.primary-nav a:hover {
+    border-bottom: 1px solid #ff7200;
+}
+
+.search {
+    font-size: 18px;
+}
+
+.placeholder {
+    height: 1000px;
 }
