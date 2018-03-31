@@ -73,6 +73,17 @@ body {
     padding: 0 15px;
 }
 
+.col-1-2 {
+    display: inline-block;
+    width: 100%;
+}
+
+@media screen and (min-width: 960px) {
+    .col-1-2 {
+        width: 50%;
+    }
+}
+
 /*
 
   Header
@@ -148,13 +159,14 @@ body {
 }
 
 .primary-nav a:hover,
+.primary-nav a:focus,
 .primary-nav span:hover {
     color: #ff7200;
     -webkit-transition: color 0.5s;
             transition: color 0.5s;
 }
 
-.primary-nav a:hover {
+.primary-nav a:focus {
     border-bottom: 1px solid #ff7200;
 }
 
@@ -269,11 +281,42 @@ body {
     border-style: solid;
 }
 
-.service-content {
-    display: flex;
-    flex-wrap: wrap;
+.service-nav a:hover,
+.service-nav a:focus {
+    background-color: #ff7200;
+    color: #fff;
+    -webkit-transition: color 0.5s, background-color 0.5s;
+            transition: color 0.5s, background-color 0.5s;
+}
+
+.service-nav a:hover::after,
+.service-nav a:focus::after {
+    border-color: #ff7200 transparent transparent transparent;
+    -webkit-transition: border-color 0.5s;
+            transition: border-color 0.5s;
+}
+
+/*
+    Hide all but first service content for now.
+    Haven't found way to show only content for related tab
+    without using JavaScript.
+*/
+.service-content:not(.no-hide) {
+    display: none;
 }
 
 .service-title {
     margin-bottom: 90px;
+    font-size: 22px;
+}
+
+.service-content p {
+    line-height: 30px;
+    font-size: 12px;
+    color: #797979;
+    margin-bottom: 35px;
+}
+
+.service-img {
+    width: 100%;
 }
